@@ -14,14 +14,25 @@ const emit = defineEmits<{
 const url = ref('')
 const errorMessages = ref<string[]>([])
 
-function validateURL() {
-  if (!props.modelValue) {
+function validateURL(inputUrl: string) {
+  if (!inputUrl || inputUrl.trim() === '') {
     errorMessages.value = []
     return
   }
   try {
-    new URL(props.modelValue)
+    new URL(inputUrl)
     errorMessages.value = []
+
+    if (!inputUrl.includes('open.spotify.com')) {
+      errorMessages.value = [
+        'This is not a valid Spotify URL. Format: https://open.spotify.com/{type}/{id}',
+      ]
+      return
+    }
+    if (!inputUrl.match(/(track|album|episode|playlist)/)) {
+      errorMessages.value = ['Only track, album, playlist and podcast episode types are allowed']
+      return
+    }
   } catch {
     errorMessages.value = [
       'This is not a valid Spotify URL. Format: https://open.spotify.com/{type}/{id}',
@@ -31,15 +42,17 @@ function validateURL() {
 
 const overrideProxy = computed({
   get() {
-    return props.modelValue
+    return props.modelValue || ''
   },
   set(val) {
     emit('update:modelValue', val)
-  }
+  },
 })
 
-function onBlur() {
-  validateURL()
+function onInput(e: unknown) {
+  url.value = e.target.value
+  emit('update:url', url.value)
+  validateURL(url.value)
 }
 </script>
 
@@ -50,10 +63,7 @@ function onBlur() {
     label="Enter Spotify URL"
     placeholder="https://open.spotify.com/{type}/{id}"
     v-model="overrideProxy"
-    @input="
-      (e: any) => {
-        emit('update:modelValue', e.target.value)
-      }"
+    @input="onInput"
     @update:modelValue="
       (val) => {
         url = val
@@ -61,7 +71,6 @@ function onBlur() {
       }
     "
     :error-messages="errorMessages"
-    @blur="onBlur"
     variant="outlined"
     dense
     rounded="xl"

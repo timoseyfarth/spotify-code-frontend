@@ -47,10 +47,10 @@ export const useSpotifyDataStore = defineStore('spotifyData', () => {
     const typeIndex = pathParts.findIndex(part => getSpotifyItemTypeFromString(part) !== SpotifyItemType.None);
     const idIndex = typeIndex + 1;
 
-    if (typeIndex === -1) return;
-    if (idIndex >= pathParts.length) return;
+    if (noInputYet.value && typeIndex === -1) return;
+    if (noInputYet.value && idIndex >= pathParts.length) return;
 
-    const newType = getSpotifyItemTypeFromString(pathParts[typeIndex]);
+    const newType = (typeIndex === -1 || idIndex >= pathParts.length) ? SpotifyItemType.None : getSpotifyItemTypeFromString(pathParts[typeIndex]);
     const newId = newType === SpotifyItemType.None ? '' : pathParts[idIndex];
 
     noInputYet.value = false;

@@ -49,7 +49,7 @@ const overrideProxy = computed({
   },
 })
 
-function onInput(e: unknown) {
+function onInput(e: any) {
   url.value = e.target.value
   emit('update:url', url.value)
   validateURL(url.value)

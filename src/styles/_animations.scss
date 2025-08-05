@@ -1,0 +1,112 @@
+.switch-enter-active,
+.switch-leave-active {
+  transition: all 470ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: absolute;
+}
+.switch-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.switch-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+
+.char-enter-from {
+  opacity: 0;
+  transform: translateY(1em);
+}
+.char-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+.char-enter-active {
+  transition:
+    opacity 180ms ease calc(var(--i) * 27ms),
+    transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--i) * 27ms);
+}
+
+
+@keyframes slide3D {
+  0% {
+    opacity: 0;
+    transform: translateY(50%) rotateX(25deg) rotateZ(-10deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) rotateZ(0) scale(1);
+  }
+}
+
+@keyframes slide3DAdv {
+  0% {
+    opacity: 0;
+    transform: translateY(50%) rotateX(35deg) rotateY(0) rotateZ(-10deg) scale(1.1) skewX(0deg);
+    filter: blur(4px) brightness(0.8);
+  }
+  20% {
+    opacity: 0.6;
+    transform: translateY(30%) rotateX(20deg) rotateY(15deg) rotateZ(-20deg) scale(1.15) skewX(5deg);
+    filter: blur(3px) brightness(1);
+  }
+  40% {
+    transform: translateY(15%) rotateX(15deg) rotateY(-10deg) rotateZ(5deg) scale(1.08) skewX(-3deg);
+    filter: blur(2px) brightness(1.1);
+  }
+  70% {
+    transform: translateY(-5%) rotateX(5deg) rotateY(5deg) rotateZ(3deg) scale(1.03) skewX(2deg);
+    filter: blur(1px) brightness(1.2);
+  }
+  85% {
+    transform: translateY(2%) rotateX(2deg) rotateY(-2deg) rotateZ(-2deg) scale(1.01) skewX(-1deg);
+    filter: blur(0) brightness(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1) skewX(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes blob-move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -50px) scale(1.11);
+  }
+  66% {
+    transform: translate(-30px, 35px) scale(0.89);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes scale-pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.09);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shadow-success {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 204, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 5px rgba(0, 204, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 204, 0, 0);
+  }
+}

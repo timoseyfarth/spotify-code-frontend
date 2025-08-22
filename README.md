@@ -1,8 +1,8 @@
 # Spotify Code Generator - Frontend
 
 [![License](https://img.shields.io/github/license/timoseyfarth/smoothiepy)](https://github.com/timoseyfarth/spotify-code-frontend/blob/main/LICENSE)
-![](https://img.shields.io/badge/GitHub-Backend-darkgreen?link=https%3A%2F%2Fgithub.com%2Ftimoseyfarth%2Fspotify-code-backend)
-![](https://img.shields.io/badge/GitHub-Main%20Repo-white?link=https%3A%2F%2Fgithub.com%2Ftimoseyfarth%2Fspotify-code-project)
+[![](https://img.shields.io/badgeGitHub-Backend-darkgreen)](https://github.com/timoseyfarth/spotify-code-backend)
+[![](https://img.shields.io/badge/GitHub-Main%20Repo-white)](https://github.com/timoseyfarth/spotify-code-project)
 
 This repository contains the frontend code for the 3D Printable Spotify Code Generator. It's a Vue.js application that provides the user interface for generating the necessary Base-8 codes from a Spotify URL. Beside that it provides color suggestions for 3D-printing and downloadable PDF files to print the album cover image.
 

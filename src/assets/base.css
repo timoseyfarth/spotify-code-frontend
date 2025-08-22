@@ -1,55 +1,91 @@
-/* color palette from <https://github.com/vuejs/theme> */
+
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --color-primary: var(--md-light-primary);
+  --color-on-primary: var(--md-light-on-primary);
+  --color-primary-container: var(--md-light-primary-container);
+  --color-on-primary-container: var(--md-light-on-primary-container);
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --color-secondary: var(--md-light-secondary);
+  --color-on-secondary: var(--md-light-on-secondary);
+  --color-secondary-container: var(--md-light-secondary-container);
+  --color-on-secondary-container: var(--md-light-on-secondary-container);
 
-  --vt-c-indigo: #2c3e50;
+  --color-tertiary: var(--md-light-tertiary);
+  --color-on-tertiary: var(--md-light-on-tertiary);
+  --color-tertiary-container: var(--md-light-tertiary-container);
+  --color-on-tertiary-container: var(--md-light-on-tertiary-container);
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --color-error: var(--md-light-error);
+  --color-on-error: var(--md-light-on-error);
+  --color-error-container: var(--md-light-error-container);
+  --color-on-error-container: var(--md-light-on-error-container);
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
+  --color-background: var(--md-light-background);
+  --color-on-background: var(--md-light-on-background);
+  --color-on-background-soft: rgba(var(--md-light-on-background), 0.7);
+  --color-on-background-mute: rgba(var(--md-light-on-background), 0.5);
+  --color-surface: var(--md-light-surface);
+  --color-on-surface: var(--md-light-on-surface);
+  --color-surface-variant: var(--md-light-surface-variant);
+  --color-on-surface-variant: var(--md-light-on-surface-variant);
+  --color-shadow: var(--md-light-shadow);
+  --color-scrim: var(--md-light-scrim);
+  --color-inverse-surface: var(--md-light-inverse-surface);
+  --color-inverse-on-surface: var(--md-light-inverse-on-surface);
+  --color-inverse-primary: var(--md-light-inverse-primary);
 
-/* semantic color variables for this project */
-:root {
-  /*--color-background: var(--vt-c-white);*/
-  --color-background: var(--vt-c-black);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-border: var(--md-light-outline);
+  --color-border-variant: var(--md-light-outline-variant);
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  /*--color-text: var(--vt-c-text-light-1);*/
-  --color-text: var(--vt-c-text-dark-2);
-
-
-  --section-gap: 160px;
+  --color-custom-color1: var(--md-light-custom-color1-color);
+  --color-custom-on-color1: var(--md-light-custom-color1-on-color);
+  --color-custom-color1-container: var(--md-light-custom-color1-color-container);
+  --color-custom-on-color1-container: var(--md-light-custom-color1-on-color-container);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-primary: var(--md-dark-primary);
+    --color-on-primary: var(--md-dark-on-primary);
+    --color-primary-container: var(--md-dark-primary-container);
+    --color-on-primary-container: var(--md-dark-on-primary-container);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+    --color-secondary: var(--md-dark-secondary);
+    --color-on-secondary: var(--md-dark-on-secondary);
+    --color-secondary-container: var(--md-dark-secondary-container);
+    --color-on-secondary-container: var(--md-dark-on-secondary-container);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-tertiary: var(--md-dark-tertiary);
+    --color-on-tertiary: var(--md-dark-on-tertiary);
+    --color-tertiary-container: var(--md-dark-tertiary-container);
+    --color-on-tertiary-container: var(--md-dark-on-tertiary-container);
+
+    --color-error: var(--md-dark-error);
+    --color-on-error: var(--md-dark-on-error);
+    --color-error-container: var(--md-dark-error-container);
+    --color-on-error-container: var(--md-dark-on-error-container);
+
+    --color-background: var(--md-dark-background);
+    --color-on-background: var(--md-dark-on-background);
+    --color-on-background-soft: rgba(var(--md-dark-on-background), 0.7);
+    --color-on-background-mute: rgba(var(--md-dark-on-background), 0.5);
+    --color-surface: var(--md-dark-surface);
+    --color-on-surface: var(--md-dark-on-surface);
+    --color-surface-variant: var(--md-dark-surface-variant);
+    --color-on-surface-variant: var(--md-dark-on-surface-variant);
+    --color-shadow: var(--md-dark-shadow);
+    --color-scrim: var(--md-dark-scrim);
+    --color-inverse-surface: var(--md-dark-inverse-surface);
+    --color-inverse-on-surface: var(--md-dark-inverse-on-surface);
+    --color-inverse-primary: var(--md-dark-inverse-primary);
+
+    --color-border: var(--md-dark-outline);
+    --color-border-variant: var(--md-dark-outline-variant);
+
+    --color-custom-color1: var(--md-dark-custom-color1-color);
+    --color-custom-on-color1: var(--md-dark-custom-color1-on-color);
+    --color-custom-color1-container: var(--md-dark-custom-color1-color-container);
+    --color-custom-on-color1-container: var(--md-dark-custom-color1-on-color-container);
   }
 }
 
@@ -63,7 +99,7 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  color: var(--color-on-background);
   background: var(--color-background);
   transition:
     color 0.5s,
